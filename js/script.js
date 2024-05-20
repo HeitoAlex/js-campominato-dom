@@ -1,6 +1,6 @@
 const playElement = document.querySelector('button');
 const gridElement = document.getElementById('grid');
-const difficultySelectEl = document.getElementById('difficulty')
+const difficultySelectEl = document.getElementById('difficulty');
 let clicks = 0;
 
 playElement.addEventListener('click', function(){
@@ -26,7 +26,7 @@ playElement.addEventListener('click', function(){
             className = 'easy'; 
     }
     bombsGenerator();
-    gridGenerator(gridElement, cells, className)
+    gridGenerator(gridElement, cells, className);
     
 })
 
@@ -34,7 +34,7 @@ playElement.addEventListener('click', function(){
 // Functions
 function resetGame(element){
     let reset;
-    element.innerHTML = ''
+    element.innerHTML = '';
     return reset
 }
 

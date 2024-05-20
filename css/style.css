@@ -25,6 +25,16 @@ img{
     height: 80px;
 }
 
+button#play-button,
+select{
+    background-color: darkorange;
+    padding: .5rem .75rem;
+    border: none;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    font-size: 20px;
+}
+
 main{
     background-color: #7FFFD4;
     padding: 2rem;
