@@ -2,6 +2,19 @@ const playElement = document.querySelector('button');
 
 playElement.addEventListener('click', function(){
     resetGame()
+    gridCreate()
+    
+})
+
+
+// Functions
+function resetGame(){
+    const reset = document.getElementById('grid');
+    reset.innerHTML = ''
+    return reset
+}
+
+function gridCreate(){
     const gridElement = document.getElementById('grid');
     gridElement.classList.add('border');
 
@@ -19,13 +32,4 @@ playElement.addEventListener('click', function(){
 
         gridElement.appendChild(squareElement);
     }
-    
-})
-
-
-// RESET
-function resetGame(){
-    const reset = document.getElementById('grid');
-    reset.innerHTML = ''
-    return reset
 }

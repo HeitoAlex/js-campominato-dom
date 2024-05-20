@@ -33,3 +33,11 @@ Aggiungere una select accanto al bottone di generazione, che fornisca una scelta
 difficoltà 1 ⇒ 100 caselle, con un numero compreso tra 1 e 100, divise in 10 caselle per 10 righe;
 difficoltà 2 ⇒ 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe;
 difficoltà 3 ⇒ 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
+
+
+
+creo una funzione che generi una serie di 16 numeri random da inserire in un array vuoto
+inserisco la funzione nell'event listener al click del bottone play
+assegno una classe diversa per le caselle segnate come bombe
+creo una funzione che fermi il codice (gameOver())
+se si clicca su una bomba o se si cliccano tutte le caselle sicure entra la funzione (gameOver())
