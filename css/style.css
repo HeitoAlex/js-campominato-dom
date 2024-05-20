@@ -52,6 +52,11 @@ article.square{
     color: white;
 }
 
+.bomb{
+    background-color: red;
+    color: black;
+}
+
 footer{
     height: 50px;
 }

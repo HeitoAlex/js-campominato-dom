@@ -3,7 +3,7 @@ const playElement = document.querySelector('button');
 playElement.addEventListener('click', function(){
     resetGame()
     gridCreate()
-    
+    bombsGenerator()
 })
 
 
@@ -31,5 +31,13 @@ function gridCreate(){
         });
 
         gridElement.appendChild(squareElement);
+    }
+}
+
+function bombsGenerator(){
+    let bombs = [];
+    while(bombs.length < 16){
+        const randomBombNumber = Math.floor(Math.random() * 100) + 1;
+        bombs.push(randomBombNumber);
     }
 }
