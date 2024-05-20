@@ -42,9 +42,19 @@ section#grid{
     border: 1px solid black;
 }
 
-button.square{
+button.square.easy{
     width: calc(100% / 10);
     height: calc(100% / 10);
+}
+
+button.square.medium{
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+button.square.hard{
+    width: calc(100% / 7);
+    height: calc(100% / 7);
 }
 
 .active{
