@@ -1,6 +1,7 @@
 const playElement = document.querySelector('button');
 const gridElement = document.getElementById('grid');
 const difficultySelectEl = document.getElementById('difficulty');
+const bombNumber = bombsGenerator();
 let clicks = 0;
 
 playElement.addEventListener('click', function(){
@@ -67,8 +68,10 @@ function gridGenerator(gridElement, numberOfCells, classToAdd){
         squareElement.addEventListener('click', function(){
             clickME(squareElement);
             
-            if (bombs){
+            if (bombNumber.includes(i)){
                 squareElement.classList.add('bomb');
+                let allBombs = document.getElementsByClassName('bomb');
+                // squareElement.removeEventListener('click', function());
             } else {
                 squareElement.classList.add('active');
             }
