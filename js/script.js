@@ -2,7 +2,10 @@ const playElement = document.querySelector('button');
 const gridElement = document.getElementById('grid');
 const difficultySelectEl = document.getElementById('difficulty');
 const bombNumber = bombsGenerator();
+let maxScore = 0;
 let clicks = 0;
+
+console.log(bombNumber);
 
 playElement.addEventListener('click', function(){
     
@@ -26,7 +29,9 @@ playElement.addEventListener('click', function(){
             cells = 100;
             className = 'easy'; 
     }
-    bombsGenerator();
+
+    maxScore = cells - bombNumber.length;
+    
     gridGenerator(gridElement, cells, className);
     
 })
@@ -34,9 +39,9 @@ playElement.addEventListener('click', function(){
 
 // Functions
 function resetGame(element){
-    let reset;
+    // let reset;
     element.innerHTML = '';
-    return reset
+    // return reset
 }
 
 
@@ -48,11 +53,20 @@ function clickME(element) {
 
 function bombsGenerator(){
     let bombs = [];
-    while(bombs.length < 16){
+    while(bombs.length < 16) {
         const randomBombNumber = Math.floor(Math.random() * 100) + 1;
-        bombs.push(randomBombNumber);
+        if(!bombs.includes(randomBombNumber)) {
+            bombs.push(randomBombNumber);
+        }
     }
     return bombs
+}
+
+function disableAll() {
+    let allCells = document.getElementsByClassName('square');
+    for(let i = 0; i < allCells.length; i++) {
+        allCells[i].disabled = true;
+    }
 }
 
 function gridGenerator(gridElement, numberOfCells, classToAdd){
@@ -70,10 +84,20 @@ function gridGenerator(gridElement, numberOfCells, classToAdd){
             
             if (bombNumber.includes(i)){
                 squareElement.classList.add('bomb');
-                let allBombs = document.getElementsByClassName('bomb');
-                // squareElement.removeEventListener('click', function());
+                // let allBombs = document.getElementsByClassName('bomb');
+                let allCells = document.getElementsByClassName('square');
+                // allCells[5].addClass('bomb');
+
+                for(let i = 0; i < bombNumber.length; i++) {
+                    let numeroCella = bombNumber[i]; // indica il numero della bomba - es.5
+                    allCells[numeroCella - 1].classList.add('bomb');
+                }
+                disableAll();
             } else {
                 squareElement.classList.add('active');
+                if(maxScore === clicks) {
+                    disableAll();
+                }
             }
             console.log(i +1);
         });
